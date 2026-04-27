@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R-Placer</title>
+  </head>
+  <body>
+    <p>
+      This project has moved to a new domain.
+      <a id="link" href="">Click here</a> to go to the new address.
+    </p>
+    <script>
+      const params = new URLSearchParams(window.location.search);
+
+      const url = params.get("url");
+      const x = params.get("x");
+      const y = params.get("y");
+
+      let newAddress = "https://r-placer.sh2a.org";
+
+      if (url && x && y) {
+        newAddress = `https://r-placer.sh2a.org/workspace?url=${url}&x=${x}&y=${y}`;
+      }
+
+      document.getElementById("link").setAttribute("href", newAddress);
+      window.location.replace(newAddress);
+    </script>
+  </body>
+</html>
